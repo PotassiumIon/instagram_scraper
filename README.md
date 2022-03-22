@@ -1,24 +1,14 @@
-# HTML scraper for facebook images
+# Instagram Scraper
 
 ## About
-Scrapes a single instagram profile
+Scrapes a single instagram profile and downloads dates, posts, images and videos to a local folder.
 
 ## Requirements
 NodeJS
 Internet Connection
 Internet Browser
 
-## How to Scrape Instagram Profile
-
-Load the url `https://www.instagram.com/username/?__a=1` in your browser replacing the `username` with the actual username of the profile
-
-A screen with json data should be shown
-
-Select all and paste the data into the instagram.json file in the root folder of this project.
-
-Save the file.
-
-In your terminal, navigate to the root folder of this project
+## How to use
 
 Run `npm install` in the command line
 

@@ -95,7 +95,7 @@ Now you can let go and if you don't interact with the browser this should scroll
 
 Create a new folder called inputs
 
-Place all the json files in inputs folder of the project root folder
+Place all the json files in the inputs folder and place the folder in the project root folder
 
 ### Running the program
 

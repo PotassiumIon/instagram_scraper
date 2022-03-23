@@ -1,7 +1,7 @@
 # Instagram Scraper
 
 ## About
-Scrapes a single instagram profile and downloads dates, posts, images and videos to a local folder.
+Scrapes a single instagram profile's most recent 12 posts and downloads dates, posts, images and videos to a local folder.
 
 ## Requirements
 NodeJS

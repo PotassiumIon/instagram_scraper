@@ -34,7 +34,8 @@ class Node {
             }
         }
 
-        this.date = new Date(node.taken_at_timestamp);
+        this.date = new Date(node.taken_at_timestamp * 1000);
+        
 
     }
 }
@@ -78,7 +79,7 @@ class InstagramScraper {
      */
     async scrape() {
 
-        // const data = this.readFile(this.inputFile);
+        // const data = JSON.parse(this.readFile(this.inputFile));
         const data = await this.fetchProfileData(this.profileURL);
 
         await this.processVideos(data.graphql.user.edge_felix_video_timeline.edges);

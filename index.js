@@ -57,7 +57,7 @@ class InstagramScraper {
         this.profileURL = `https://www.instagram.com/${process.argv[2]}/?__a=1`;
         this.resultsFolder = path.resolve(__dirname, 'results');
         this.downloadFolder = path.resolve(__dirname, 'results/downloads');
-        this.inputFile = path.resolve(__dirname, 'instagram.json');
+        // this.inputFile = path.resolve(__dirname, 'input.json');
         this.outputFile = path.resolve(__dirname, 'results/output.txt');
         this.videosFile = path.resolve(__dirname, 'results/videoURLs.txt');
         this.imagesFile = path.resolve(__dirname, 'results/imageURLs.txt');

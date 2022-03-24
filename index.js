@@ -80,7 +80,7 @@ class InstagramScraper {
             
             let outputFile = path.resolve(outputFolder, "post.txt");
 
-            this.log("TIMESTAMP: " + node.date.toDateString(), outputFile);
+            this.log("TIMESTAMP: " + node.date.toString(), outputFile);
             this.log("CAPTION: " + node.caption, outputFile);
 
             if (node.isVideo) {

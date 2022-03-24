@@ -47,6 +47,8 @@ class InstagramScraper {
      */
     async scrape() {
 
+        console.log("Operation Started");
+
         const posts = this.readFiles(this.inputsFolder);
 
         await this.processPosts(posts);

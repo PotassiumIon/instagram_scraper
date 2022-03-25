@@ -58,14 +58,15 @@ class InstagramScraper {
 
     /**
      * Processes a list of instagram edge posts
-     * @param {Array<Node>} posts 
+     * @param {Array<Node>} posts
      */
     async processPosts(posts) {
         for (let i = 0; i < posts.length; i++) {
 
             let node = posts[i];
+            let dateValues = node.date.toString().replace(/\s/g, "-").replace(/:\s*/g, "-").split("-");
 
-            let dateString = node.date.toString().replace(/\s/g, "-").replace(/:\s*/g, "-");
+            let dateString = "".concat(dateValues[3], "-",dateValues[1], "-", dateValues[2], "-" ,dateValues[4], dateValues[5]);
 
             let outputFolder = path.resolve(this.outputsFolder, dateString);
 

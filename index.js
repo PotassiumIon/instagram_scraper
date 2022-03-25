@@ -65,19 +65,14 @@ class InstagramScraper {
 
             let node = posts[i];
 
-            let outputFolder = path.resolve(
-                this.outputsFolder, 
-                node.date.getFullYear() +
-                    "-" +
-                    node.date.getMonth() +
-                    "-" + 
-                    node.date.getDay()
-            );
+            let dateString = node.date.toString().replace(/\s/g, "-").replace(/:\s*/g, "-");
+
+            let outputFolder = path.resolve(this.outputsFolder, dateString);
 
             if (!fs.existsSync(outputFolder)) {
                 fs.mkdirSync(outputFolder);
             }
-            
+
             let outputFile = path.resolve(outputFolder, "post.txt");
 
             this.log("TIMESTAMP: " + node.date.toString(), outputFile);

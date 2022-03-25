@@ -13,6 +13,7 @@ class Node {
         this.src = node.src;
         this.videoUrl = node.videoUrl ? node.videoUrl : null;
         this.date = new Date(node.postedAt * 1000);
+        this.sidecarChildren = node.sidecarChildren? node.sidecarChildren : [];
     }
 }
 
@@ -66,7 +67,7 @@ class InstagramScraper {
             let node = posts[i];
             let dateValues = node.date.toString().replace(/\s/g, "-").replace(/:\s*/g, "-").split("-");
 
-            let dateString = "".concat(dateValues[3], "-",dateValues[1], "-", dateValues[2], "-" ,dateValues[4], dateValues[5]);
+            let dateString = "".concat(dateValues[3], "-", dateValues[1], "-", dateValues[2], "-", dateValues[4], dateValues[5]);
 
             let outputFolder = path.resolve(this.outputsFolder, dateString);
 
@@ -90,10 +91,21 @@ class InstagramScraper {
             } else {
                 this.log(node.src, this.imagesFile);
                 this.log("IMAGE URL: " + node.src, outputFile);
+
                 try {
                     await this.processURL(node.src, outputFolder);
                 } catch (e) {
                     this.log("\nError Fetching Image\n" + e.stack, this.errorLogFile);
+                }
+
+                for (let child of node.sidecarChildren) {
+                    this.log(child.src, this.imagesFile);
+                    this.log("IMAGE URL: " + child.src, outputFile);
+                    try {
+                        await this.processURL(child.src, outputFolder);
+                    } catch (e) {
+                        this.log("\nError Fetching Image\n" + e.stack, this.errorLogFile);
+                    }   
                 }
             }
 

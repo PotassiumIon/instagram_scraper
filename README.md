@@ -38,7 +38,11 @@ Click save for overrides
 
 Open the file in your text / code editor (recommended)
 
-Press `Ctrl + f ` to search for the code `var t = this;`
+Press `Ctrl + f ` to search for the keyword `article`
+
+Look in the code for `return s.componentDidMount = function () { var t = this;`
+
+The code was on line 197 when I found it.
 
 Right after this line input the below code:
 
@@ -80,18 +84,6 @@ Scroll down until all the posts have loaded in the browser
 **If a prompt appears asking to specify the download location of the json file manually name the file somethign random and save it**
 
 All the json files will be saved to your downloads folder
-
-***LIFE HACKS***
-
-Close the device toolbar by pressing Ctrl + Shift + M
-
-Enlarge the console window by dragging the left side of the window left until the feeds icon shows up in the screen instead of an image grid
-
-Click and hold the left mouse button near the bottom of the scrollbar and right click without letting go
-
-Now you can let go and if you don't interact with the browser this should scroll indefinitely
-
-***
 
 Create a new folder called inputs
 
